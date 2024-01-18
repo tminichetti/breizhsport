@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { ICartItem, removeItem, updateItem } from '../redux/slices/cartSlice';
-import { IProduct } from '@/components/product-page';
+import IProduct from '../interfaces/IProduct';
 
 interface IUseCartItemProps {
 	item: ICartItem;
