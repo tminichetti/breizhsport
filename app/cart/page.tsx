@@ -32,7 +32,7 @@ export default function Cart() {
 
 						return (
 							<CartItem
-								key={index}
+								key={item.id}
 								product={product}
 								item={item}
 							/>

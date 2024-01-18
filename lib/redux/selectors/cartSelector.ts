@@ -7,11 +7,16 @@ export const cartItemsSelector = (state: RootState) => state.cart.items;
 
 export const totalCartPriceSelector = createSelector(
 	cartItemsSelector,
-	(items) => {
+	(items: ICartItem[]) => {
 		return items.reduce(
 			(acc, item) => acc + item.price * item.numberOfProducts,
 			0
 		);
 	}
+);
+
+export const uniqueProductsCountSelector = createSelector(
+	cartItemsSelector,
+	(items: ICartItem[]) => items.length
 );
 

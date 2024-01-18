@@ -1,13 +1,17 @@
 'use client';
 
 import Logo from '@/assets/breizhsport-logo.svg';
+import { uniqueProductsCountSelector } from '@/lib/redux/selectors/cartSelector';
 import { AlignJustify, MoveRight, ShoppingCart, User, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 const MainNav = () => {
+	const dispatch = useDispatch();
 	const [isOpenMenu, setOpenMenu] = useState(false);
+	const numberOfProducts: number = useSelector(uniqueProductsCountSelector);
 
 	const handleToggleMenu = () => {
 		setOpenMenu(!isOpenMenu);
@@ -38,11 +42,16 @@ const MainNav = () => {
 				</div>
 				<div className="w-full flex items-center justify-end gap-2">
 					{/* <Search /> */}
-					<Link href="/cart">
+					<Link href="/cart" className="relative">
 						<ShoppingCart
 							color="white"
 							className="cursor-pointer"
 						/>
+						{numberOfProducts > 0 && (
+							<span className="absolute flex justify-center items-center rounded-full bg-white w-5 h-5 left-2.5 top-5 text-xs">
+								{numberOfProducts}
+							</span>
+						)}
 					</Link>
 					{/* <ModeToggle /> */}
 				</div>

@@ -10,7 +10,7 @@ import { usePathname } from 'next/navigation';
 
 export default function BasketballCollectionPage() {
 	const router = usePathname();
-	const slug = router.split('/')[2];
+	const slug = router?.split('/')[2] || '';
 
 	const collectionProducts = products.filter(
 		(product) => product.collections === slug
@@ -18,7 +18,7 @@ export default function BasketballCollectionPage() {
 
 	return (
 		<div className="flex flex-col py-8">
-			<h1 className="text-2xl font-medium">{slug.toPascalCase()}</h1>
+			<h1 className="text-2xl font-medium">{slug}</h1>
 
 			<div className="flex justify-between mt-16 mb-4">
 				<div className="flex gap-2">

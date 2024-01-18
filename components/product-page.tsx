@@ -1,34 +1,29 @@
 import { cartItemsSelector } from '@/lib/redux/selectors/cartSelector';
-import { addItem, updateItem } from '@/lib/redux/slices/cartSlice';
+import { ICartItem, addItem, updateItem } from '@/lib/redux/slices/cartSlice';
 import Image from 'next/image';
 import { ChangeEvent, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 
-export interface IProduct {
-	id: number;
-	name: string;
-	price: number;
-	image: string;
-}
-
 interface IProductPageProps {
-	product: IProduct;
+	productVM: IProductViewModel;
 }
 
-const ProductPage = ({ product }: IProductPageProps) => {
+const ProductPage = ({ productVM }: IProductPageProps) => {
 	const dispatch = useDispatch();
 	const cartItems = useSelector(cartItemsSelector);
-	const cartItem = cartItems.find((item) => item.id === product.id);
+	const cartItem = cartItems.find(
+		(item: ICartItem) => item.id === productVM.Id
+	);
 
 	const [numberOfProducts, setNumberOfProducts] = useState(1);
 
 	const handleAddToCart = () => {
 		const payload = {
-			id: product.id,
+			id: productVM.Id,
 			numberOfProducts,
-			price: product.price,
+			price: productVM.Price,
 		};
 		if (!cartItem) {
 			dispatch(addItem(payload));
@@ -49,23 +44,23 @@ const ProductPage = ({ product }: IProductPageProps) => {
 	return (
 		<div className="flex flex-col py-8">
 			<Image
-				src={`${product.image}`}
-				alt={product.name}
+				src={`${productVM.Image}`}
+				alt={productVM.Name}
 				width={100}
 				height={100}
 				// fill
-				className="w-full h-fit"
+				className="w-full h-fit border"
 			/>
-			<div className="flex flex-col">
+			<div className="flex flex-col mt-4">
 				<span className="uppercase font-light font-xs">
 					breizhsport
 				</span>
-				<span className="text-xl mt-2">{product.name}</span>
-				<span className="mt-4 mb-1">{product.price.asCurrency()}</span>
-				<span className="text-xs">Taxes incluses</span>
+				<span className="text-xl mt-2">{productVM.Name}</span>
+				<span className="mt-4 mb-1">{productVM.PriceAsCurrency}</span>
+				<span className="text-xs font-extralight">Taxes incluses</span>
 
 				<div className="mt-4">
-					<span className="mb-2">
+					<span className="mb-4">
 						Quantité{' '}
 						{cartItem && (
 							<label className="text-xs">
