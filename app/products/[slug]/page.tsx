@@ -4,7 +4,7 @@ import ProductPage from '@/components/product-page';
 import EmptyCart from '@/components/empty-product-page';
 import products from '@/products.json';
 import { usePathname } from 'next/navigation';
-import ProductViewModel from '@/lib/view-model/productViewModel';
+import ProductViewModel from '@/lib/view-model/ProductViewModel';
 
 export default function Product() {
 	const router: string | null = usePathname();
