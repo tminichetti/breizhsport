@@ -1,5 +1,5 @@
 'use client';
-
+import React from 'react';
 import '@/lib/extensionMethods/number';
 import '@/lib/extensionMethods/string';
 import products from '@/products.json';
@@ -29,7 +29,7 @@ export default function BasketballCollectionPage() {
 			</div>
 
 			{collectionProducts.length > 0 ? (
-				<div className="grid grid-cols-2 gap-8">
+				<div className="grid grid-cols-2 gap-8 md:grid-cols-4">
 					{collectionProducts.map((product) => (
 						<Link
 							key={product.id}
@@ -41,7 +41,7 @@ export default function BasketballCollectionPage() {
 									width={100}
 									height={100}
 									// fill
-									className="w-full h-fit"
+									className="w-full h-fit md:max-w-[270px]"
 								/>
 								<div className="text-sm">{product.name}</div>
 								<div className="font-semibold text-md">

@@ -1,5 +1,5 @@
 'use client';
-
+import React from 'react';
 import ProductPage from '@/components/product-page';
 import EmptyCart from '@/components/empty-product-page';
 import products from '@/products.json';

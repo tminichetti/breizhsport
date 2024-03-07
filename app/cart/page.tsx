@@ -1,5 +1,5 @@
 'use client';
-
+import React from 'react';
 import CartItem from '@/components/cart-item';
 import {
 	cartItemsSelector,
@@ -8,6 +8,9 @@ import {
 import { ICartItem } from '@/lib/redux/slices/cartSlice';
 import products from '@/products.json';
 import { useSelector } from 'react-redux';
+
+import '@/lib/extensionMethods/number';
+import '@/lib/extensionMethods/string';
 
 export default function Cart() {
 	const cartItems = useSelector(cartItemsSelector);

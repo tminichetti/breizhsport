@@ -29,7 +29,9 @@ export default function RootLayout({
 					disableTransitionOnChange>
 					<StoreProvider>
 						<MainNav />
-						<main className="container">{children}</main>
+						<main className="container md:px-[5rem]">
+							{children}
+						</main>
 						<TailwindIndicator />
 					</StoreProvider>
 				</ThemeProvider>

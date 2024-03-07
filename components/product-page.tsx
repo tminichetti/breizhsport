@@ -1,3 +1,4 @@
+import React from 'react';
 import { cartItemsSelector } from '@/lib/redux/selectors/cartSelector';
 import { ICartItem, addItem, updateItem } from '@/lib/redux/slices/cartSlice';
 import Image from 'next/image';
@@ -42,16 +43,16 @@ const ProductPage = ({ productVM }: IProductPageProps) => {
 	};
 
 	return (
-		<div className="flex flex-col py-8">
+		<div className="flex flex-col py-8 md:grid md:grid-cols-2">
 			<Image
 				src={`${productVM.Image}`}
 				alt={productVM.Name}
 				width={100}
 				height={100}
 				// fill
-				className="w-full h-fit border"
+				className="w-full h-fit border md:max-w-[650px]"
 			/>
-			<div className="flex flex-col mt-4">
+			<div className="flex flex-col mt-4 md:pl-8">
 				<span className="uppercase font-light font-xs">
 					breizhsport
 				</span>

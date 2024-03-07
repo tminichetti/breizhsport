@@ -1,4 +1,6 @@
 import IProduct from '../interfaces/IProduct';
+import '@/lib/extensionMethods/number';
+import '@/lib/extensionMethods/string';
 
 export default class ProductViewModel {
 	private id: number;

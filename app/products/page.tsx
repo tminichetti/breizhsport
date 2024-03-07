@@ -1,5 +1,5 @@
 'use client';
-
+import React from 'react';
 import '@/lib/extensionMethods/number';
 import '@/lib/extensionMethods/string';
 import products from '@/products.json';

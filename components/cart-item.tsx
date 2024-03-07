@@ -1,5 +1,5 @@
 'use client';
-
+import React from 'react';
 import { useCartItem } from '@/lib/hooks/useCartItem';
 import { ICartItem } from '@/lib/redux/slices/cartSlice';
 import Image from 'next/image';
@@ -23,13 +23,14 @@ const CartItem = ({ product, item }: ICartItemProps) => {
 
 	return (
 		<>
-			<div className="grid grid-cols-4 grid-rows-2 gap-4 items-center p-4 border-b border-gray-300">
-				<div className="col-span-1 row-span-2 border">
+			<div className="grid grid-cols-4 grid-rows-2 gap-4 items-center p-4 border-b border-gray-300 md:grid-rows-1">
+				<div className="col-span-1 row-span-2 md:row-span-1 md:w-full">
 					<Image
 						src={product.image}
 						alt={product.name}
 						width={50}
 						height={50}
+						className="max-w-[90px] border"
 					/>
 				</div>
 
@@ -46,7 +47,7 @@ const CartItem = ({ product, item }: ICartItemProps) => {
 					<p>{Number(totalPrice).asCurrency()}</p>
 				</div>
 
-				<div className="col-start-2 col-end-4 row-start-2 row-end-2 flex justify-between items-center">
+				<div className="col-start-2 col-end-4 row-start-2 row-end-2 flex justify-between items-center md:row-start-1 md:col-start-3 md:col-end-3">
 					<div className="flex space-x-2">
 						<Button
 							variant="ghost"
@@ -69,7 +70,10 @@ const CartItem = ({ product, item }: ICartItemProps) => {
 							+
 						</Button>
 					</div>
-					<Button variant="destructive" onClick={handleRemoveItem}>
+					<Button
+						variant="destructive"
+						onClick={handleRemoveItem}
+						className="md:ml-8">
 						<Trash2 />
 					</Button>
 				</div>

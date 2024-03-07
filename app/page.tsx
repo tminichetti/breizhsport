@@ -14,12 +14,13 @@ export default function Home() {
 			id="collections"
 			className="flex flex-col justify-between w-full py-4 gap-4">
 			<h1 className="text-2xl">Collections</h1>
-			<div className="flex flex-col gap-8">
+			<div className="flex flex-col gap-8 md:grid md:grid-cols-3 md:gap-x-2 md:gap-y-4">
 				<Link href="/collections/basketball">
 					<div className="flex flex-col gap-2">
 						<Image
 							src={BasketballImage}
 							alt={'basketball collection'}
+							className="w-full max-w-[320px]"
 						/>
 						<span className="flex gap-2">
 							Basketball
@@ -32,6 +33,7 @@ export default function Home() {
 						<Image
 							src={FootballImage}
 							alt={'football collection'}
+							className="w-full max-w-[320px]"
 						/>
 						<span className="flex gap-2">
 							Football
@@ -41,7 +43,11 @@ export default function Home() {
 				</Link>
 				<Link href="/collections/surf">
 					<div className="flex flex-col gap-2">
-						<Image src={SurfImage} alt={'surf collection'} />
+						<Image
+							src={SurfImage}
+							alt={'surf collection'}
+							className="w-full max-w-[320px]"
+						/>
 						<span className="flex gap-2">
 							Surf
 							<MoveRight />
@@ -50,7 +56,11 @@ export default function Home() {
 				</Link>
 				<Link href="/collections/tennis">
 					<div className="flex flex-col gap-2">
-						<Image src={TennisImage} alt={'tennis collection'} />
+						<Image
+							src={TennisImage}
+							alt={'tennis collection'}
+							className="w-full max-w-[320px]"
+						/>
 						<span className="flex gap-2">
 							Tennis
 							<MoveRight />

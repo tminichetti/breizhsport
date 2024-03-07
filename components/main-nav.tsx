@@ -37,7 +37,11 @@ const MainNav = () => {
 				</div>
 				<div className="w-full flex items-center justify-center">
 					<Link href="/">
-						<Image src={Logo} alt={'breizhsport logo'} />
+						<Image
+							src={Logo}
+							alt={'breizhsport logo'}
+							className="md:w-[220px]"
+						/>
 					</Link>
 				</div>
 				<div className="w-full flex items-center justify-end gap-2">
