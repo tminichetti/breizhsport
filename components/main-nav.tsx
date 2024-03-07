@@ -1,5 +1,5 @@
 'use client';
-
+import React from 'react';
 import Logo from '@/assets/breizhsport-logo.svg';
 import { uniqueProductsCountSelector } from '@/lib/redux/selectors/cartSelector';
 import { AlignJustify, MoveRight, ShoppingCart, User, X } from 'lucide-react';

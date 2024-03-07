@@ -1,12 +1,10 @@
+import React from 'react';
 import MainNav from '@/components/main-nav';
 import { TailwindIndicator } from '@/components/tailwind-indicator';
 import { ThemeProvider } from '@/components/theme-provider';
-import { Inter } from 'next/font/google';
 import StoreProvider from './StoreProvider';
 import './globals.css';
 import { Metadata } from 'next';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
 	title: {
@@ -23,7 +21,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={inter.className}>
+			<body>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="light"
