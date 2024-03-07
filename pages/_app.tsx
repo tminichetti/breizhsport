@@ -1,3 +1,5 @@
+import React from 'react';
+
 import '@/lib/extensionMethods/number';
 import '@/lib/extensionMethods/string';
 
