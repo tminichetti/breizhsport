@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useMemo, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { ICartItem, removeItem, updateItem } from '../redux/slices/cartSlice';
