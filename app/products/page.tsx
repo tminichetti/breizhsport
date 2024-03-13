@@ -20,7 +20,7 @@ const AllProductsPage = () => {
 				<div>{products.length} produit(s)</div>
 			</div>
 
-			<div className="grid grid-cols-2 gap-8">
+			<div className="grid grid-cols-2 gap-8 md:grid-cols-4">
 				{products.map((product) => (
 					<Link key={product.id} href={`/products/${product.slug}`}>
 						<div className="w-full h-fit flex flex-col gap-2">
