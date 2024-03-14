@@ -11,6 +11,8 @@ import { useSelector } from 'react-redux';
 
 import '@/lib/extensionMethods/number';
 import '@/lib/extensionMethods/string';
+import { Button } from '@/components/ui/button';
+import { ShoppingBasketIcon } from 'lucide-react';
 
 export default function Cart() {
 	const cartItems = useSelector(cartItemsSelector);
@@ -21,7 +23,7 @@ export default function Cart() {
 			{cartItems.length === 0 ? (
 				<span>Votre panier est vide</span>
 			) : (
-				<div className="">
+				<div>
 					<span className="text-xl">Votre panier</span>
 					<div className="w-full flex justify-between border-b mt-8 mb-2">
 						<span>Produit</span>
@@ -44,6 +46,13 @@ export default function Cart() {
 					<span className="flex w-full justify-center mt-8">
 						Total estimé : {Number(totalPrice).asCurrency()}
 					</span>
+
+					{/* <div className="flex w-full justify-center mt-8">
+						<Button className="gap-2">
+							Procéder au paiement
+							<ShoppingBasketIcon />
+						</Button>
+					</div> */}
 				</div>
 			)}
 		</div>
