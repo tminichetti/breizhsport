@@ -59,7 +59,7 @@ const CartItem = ({ product, item }: ICartItemProps) => {
 							onChange={(e: ChangeEvent<HTMLInputElement>) =>
 								handleChangeQuantity(Number(e.target.value))
 							}
-							className="w-12 text-center"
+							className="w-12 text-center md:min-w-[60px]"
 						/>
 						<Button
 							variant="ghost"
