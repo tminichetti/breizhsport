@@ -15,7 +15,8 @@ interface ICartItemProps {
 }
 
 const CartItem = ({ product, item }: ICartItemProps) => {
-	const { quantity, totalPrice, handleRemoveItem, handleChangeQuantity } = useCartItem({ product, item });
+	const { quantity, totalPrice, handleRemoveItem, handleChangeQuantity } =
+		useCartItem({ product, item });
 
 	return (
 		<>

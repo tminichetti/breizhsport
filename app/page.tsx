@@ -14,7 +14,7 @@ export default function Home() {
 			id="collections"
 			className="flex flex-col justify-between w-full py-4 gap-4">
 			<h1 className="text-2xl">Collections</h1>
-			<div className="flex flex-col gap-8 md:grid md:grid-cols-3 md:gap-x-2 md:gap-y-4">
+			<div className="flex flex-col gap-8 items-center md:grid md:grid-cols-3 md:gap-x-2 md:gap-y-4">
 				<Link href="/collections/basketball">
 					<div className="flex flex-col gap-2">
 						<Image

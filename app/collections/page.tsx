@@ -12,7 +12,7 @@ export default function CollectionPage() {
 	return (
 		<div className="flex flex-col justify-between w-full py-4 gap-4">
 			<h1 className="text-2xl">Collections</h1>
-			<div className="grid grid-cols-2 grid-rows-2 gap-x-2 gap-y-4">
+			<div className="grid grid-cols-2 grid-rows-2 gap-x-2 gap-y-4 items-center">
 				<Link href="/collections/basketball">
 					<div className="flex flex-col gap-2">
 						<Image
