@@ -47,12 +47,12 @@ export default function Cart() {
 						Total estimé : {Number(totalPrice).asCurrency()}
 					</span>
 
-					{/* <div className="flex w-full justify-center mt-8">
+					<div className="flex w-full justify-center mt-8">
 						<Button className="gap-2">
 							Procéder au paiement
 							<ShoppingBasketIcon />
 						</Button>
-					</div> */}
+					</div>
 				</div>
 			)}
 		</div>
